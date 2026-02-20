@@ -1,0 +1,17 @@
+{
+  "projectName": "wedding-invitation-2026",
+  "mode": "file-router",
+  "typescript": true,
+  "packageManager": "yarn",
+  "includeExamples": false,
+  "tailwind": true,
+  "addOnOptions": {},
+  "envVarValues": {},
+  "git": true,
+  "routerOnly": true,
+  "version": 1,
+  "framework": "react-cra",
+  "chosenAddOns": [
+    "eslint"
+  ]
+}
