@@ -4,16 +4,10 @@ import { AnimatePresence, motion } from 'motion/react'
 type DockModalProps = {
   isOpen: boolean
   onClose: () => void
-  title: string
   children?: ReactNode
 }
 
-export const DockModal = ({
-  isOpen,
-  onClose,
-  title,
-  children,
-}: DockModalProps) => {
+export const DockModal = ({ isOpen, onClose, children }: DockModalProps) => {
   return (
     <AnimatePresence>
       {isOpen && (

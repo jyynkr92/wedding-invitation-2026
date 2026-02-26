@@ -58,11 +58,7 @@ export const BottomDock = () => {
 
   return (
     <>
-      <DockModal
-        isOpen={activeModal === '소개'}
-        onClose={handleClose}
-        title="소개"
-      >
+      <DockModal isOpen={activeModal === '소개'} onClose={handleClose}>
         <IntroContent />
       </DockModal>
       {dockItems
@@ -72,7 +68,6 @@ export const BottomDock = () => {
             key={item.label}
             isOpen={activeModal === item.label}
             onClose={handleClose}
-            title={item.label}
           >
             <div className="flex items-center justify-center h-full text-gray-400">
               {item.label} 컨텐츠가 여기에 들어갑니다

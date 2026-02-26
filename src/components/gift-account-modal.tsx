@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
+import AccountItem from './account-item'
 
-type AccountRow = {
+export type AccountRow = {
   name: string
   account: string
   bank: string
@@ -58,109 +58,6 @@ const ACCOUNTS: Record<'bride' | 'groom', AccountRow[]> = {
       side: 'bride',
     },
   ],
-}
-
-const HeartFillIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="12"
-    height="12"
-    fill="currentColor"
-    viewBox="0 0 16 16"
-    className={className}
-  >
-    <path
-      fillRule="evenodd"
-      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"
-    />
-  </svg>
-)
-
-const CopyIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-  </svg>
-)
-
-const CheckIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <polyline points="20 6 9 17 4 12" />
-  </svg>
-)
-
-const AccountItem = ({ row }: { row: AccountRow }) => {
-  const [copied, setCopied] = useState(false)
-
-  const handleCopy = async (): Promise<void> => {
-    await navigator.clipboard.writeText(row.account)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
-
-  const accentClass = row.side === 'bride' ? 'bride' : 'groom'
-  const bgClass =
-    row.side === 'bride'
-      ? 'bg-rose-50/60 border-rose-100'
-      : 'bg-sky-50/60 border-sky-100'
-
-  return (
-    <div className={`rounded-2xl border px-4 py-3 ${bgClass}`}>
-      <div className="flex items-center gap-1.5 mb-2">
-        <span className={`text-xs font-semibold ${accentClass}`}>
-          {row.name}
-        </span>
-        {row.isMain && (
-          <HeartFillIcon
-            className={row.side === 'bride' ? 'text-rose-400' : 'text-sky-400'}
-          />
-        )}
-      </div>
-      <div className="flex items-center gap-2">
-        <div className="flex-1 bg-white/70 rounded-xl px-3 py-2 flex items-center justify-between border border-white/80">
-          <span className="text-xs text-gray-700 font-mono tracking-wide">
-            {row.account}
-          </span>
-          <span className="text-[10px] text-gray-400 ml-2 shrink-0">
-            {row.bank}
-          </span>
-        </div>
-        <motion.button
-          whileTap={{ scale: 0.88 }}
-          onClick={handleCopy}
-          className={`w-9 h-9 flex items-center justify-center rounded-xl shrink-0 cursor-pointer border transition-colors ${
-            copied
-              ? 'bg-emerald-100 border-emerald-200 text-emerald-500'
-              : row.side === 'bride'
-                ? 'bg-rose-100 border-rose-200 text-rose-400'
-                : 'bg-sky-100 border-sky-200 text-sky-400'
-          }`}
-        >
-          {copied ? <CheckIcon /> : <CopyIcon />}
-        </motion.button>
-      </div>
-    </div>
-  )
 }
 
 export const GiftAccountModal = ({
