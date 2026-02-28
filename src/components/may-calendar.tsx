@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { motion } from 'motion/react';
 
 const MAY_DAYS = [
   [null, null, null, null, null, 1, 2],
@@ -7,9 +7,9 @@ const MAY_DAYS = [
   [17, 18, 19, 20, 21, 22, 23],
   [24, 25, 26, 27, 28, 29, 30],
   [31, null, null, null, null, null, null],
-]
+];
 
-const DAY_LABELS = ['일', '월', '화', '수', '목', '금', '토']
+const DAY_LABELS = ['일', '월', '화', '수', '목', '금', '토'];
 
 const MayCalendar = () => (
   <motion.div
@@ -19,9 +19,7 @@ const MayCalendar = () => (
     transition={{ duration: 0.5, delay: 0.6 }}
   >
     <div className="w-full rounded-2xl bg-white/40 backdrop-blur-sm border border-white/50 p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
-      <div className="text-4xl font-light text-gray-700 tracking-widest text-center mb-5">
-        5
-      </div>
+      <div className="text-4xl font-light text-gray-700 tracking-widest text-center mb-5">5</div>
       <div className="grid grid-cols-7 mb-2">
         {DAY_LABELS.map((d) => (
           <div
@@ -36,14 +34,11 @@ const MayCalendar = () => (
         {MAY_DAYS.map((week, wi) => (
           <div key={wi} className="grid grid-cols-7">
             {week.map((day, di) => {
-              const isHighlight = day === 30
-              const isSun = di === 0
-              const isSat = di === 6
+              const isHighlight = day === 30;
+              const isSun = di === 0;
+              const isSat = di === 6;
               return (
-                <div
-                  key={di}
-                  className="flex flex-col items-center justify-start py-0.5 gap-0.5"
-                >
+                <div key={di} className="flex flex-col items-center justify-start py-0.5 gap-0.5">
                   {day !== null ? (
                     <>
                       <div
@@ -60,7 +55,7 @@ const MayCalendar = () => (
                     </>
                   ) : null}
                 </div>
-              )
+              );
             })}
           </div>
         ))}
@@ -77,6 +72,6 @@ const MayCalendar = () => (
       테이크호텔 서울 광명 3층 루미나스홀
     </motion.p>
   </motion.div>
-)
+);
 
-export default MayCalendar
+export default MayCalendar;

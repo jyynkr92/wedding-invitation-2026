@@ -1,19 +1,19 @@
-import { useMemo } from 'react'
+import { useMemo } from 'react';
 
-type DeviceType = 'ios' | 'android' | 'other'
+type DeviceType = 'ios' | 'android' | 'other';
 
 export const useDeviceType = (): DeviceType => {
   return useMemo(() => {
-    const ua = navigator.userAgent || navigator.vendor || ''
+    const ua = navigator.userAgent || navigator.vendor || '';
 
     if (/iPad|iPhone|iPod|Macintosh/.test(ua) && 'ontouchend' in document) {
-      return 'ios'
+      return 'ios';
     }
 
     if (/android/i.test(ua)) {
-      return 'android'
+      return 'android';
     }
 
-    return 'other'
-  }, [])
-}
+    return 'other';
+  }, []);
+};

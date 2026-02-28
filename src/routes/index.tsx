@@ -1,15 +1,16 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { motion } from 'motion/react'
-import { BottomDock } from '../components/bottom-dock'
+import { createFileRoute } from '@tanstack/react-router';
+import { motion } from 'motion/react';
+import { BottomDock } from '../components/bottom-dock';
+import { DDayBox } from '../components/d-day-box';
 
-export const Route = createFileRoute('/')({ component: App })
+export const Route = createFileRoute('/')({ component: App });
 
 function App() {
   const words = [
     { text: "We're", ml: '-ml-35' },
     { text: 'Getting', ml: '' },
     { text: 'Married', ml: 'ml-35' },
-  ]
+  ];
 
   return (
     <div className="relative h-screen max-w-184 mx-auto bg-bottom bg-no-repeat bg-main overflow-hidden">
@@ -33,7 +34,8 @@ function App() {
         style={{ backgroundImage: "url('/image/main_image.png')" }}
         className="absolute -bottom-1 left-0 w-full h-3/4 bg-cover bg-bottom bg-no-repeat pointer-events-none z-10"
       />
+      <DDayBox />
       <BottomDock />
     </div>
-  )
+  );
 }

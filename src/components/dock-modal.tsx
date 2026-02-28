@@ -1,11 +1,11 @@
-import { type ReactNode } from 'react'
-import { AnimatePresence, motion } from 'motion/react'
+import { type ReactNode } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 
 type DockModalProps = {
-  isOpen: boolean
-  onClose: () => void
-  children?: ReactNode
-}
+  isOpen: boolean;
+  onClose: () => void;
+  children?: ReactNode;
+};
 
 export const DockModal = ({ isOpen, onClose, children }: DockModalProps) => {
   return (
@@ -36,12 +36,10 @@ export const DockModal = ({ isOpen, onClose, children }: DockModalProps) => {
                 ✕
               </motion.button>
             </div>
-            <div className="px-6 pb-6 overflow-y-auto h-[calc(100%-3.5rem)]">
-              {children}
-            </div>
+            <div className="px-6 pb-6 overflow-y-auto h-[calc(100%-3.5rem)]">{children}</div>
           </motion.div>
         </>
       )}
     </AnimatePresence>
-  )
-}
+  );
+};

@@ -1,32 +1,31 @@
-import { useState } from 'react'
-import { motion } from 'motion/react'
-import { useDeviceType } from '../hooks/use-device-type'
-import { DockModal } from './dock-modal'
-import { IntroContent } from './intro-content'
+import { useState } from 'react';
+import { motion } from 'motion/react';
+import { useDeviceType } from '../hooks/use-device-type';
+import { DockModal } from './dock-modal';
+import { IntroContent } from './intro-content';
+import LocationModal from './location-modal';
 
 type DockItem = {
-  label: string
-  icon: string
-  className?: string
-  textColor: string
-}
+  label: string;
+  icon: string;
+  className?: string;
+  textColor: string;
+};
 
 export const BottomDock = () => {
-  const deviceType = useDeviceType()
-  const [activeModal, setActiveModal] = useState<string | null>(null)
+  const deviceType = useDeviceType();
+  const [activeModal, setActiveModal] = useState<string | null>(null);
 
   const handleOpen = (label: string) => {
-    setActiveModal(label)
-  }
+    setActiveModal(label);
+  };
 
   const handleClose = () => {
-    setActiveModal(null)
-  }
+    setActiveModal(null);
+  };
 
   const calendarIcon =
-    deviceType === 'android'
-      ? '/image/calendar-android.png'
-      : '/image/calendar-ios.png'
+    deviceType === 'android' ? '/image/calendar-android.png' : '/image/calendar-ios.png';
 
   const dockItems: DockItem[] = [
     {
@@ -54,26 +53,22 @@ export const BottomDock = () => {
       className: 'text-white',
       textColor: 'text-white',
     },
-  ]
+  ];
 
   return (
     <>
       <DockModal isOpen={activeModal === '소개'} onClose={handleClose}>
         <IntroContent />
       </DockModal>
-      {dockItems
-        .filter((item) => item.label !== '홈' && item.label !== '소개')
-        .map((item) => (
-          <DockModal
-            key={item.label}
-            isOpen={activeModal === item.label}
-            onClose={handleClose}
-          >
-            <div className="flex items-center justify-center h-full text-gray-400">
-              {item.label} 컨텐츠가 여기에 들어갑니다
-            </div>
-          </DockModal>
-        ))}
+      <DockModal isOpen={activeModal === '지도'} onClose={handleClose}>
+        <LocationModal />
+      </DockModal>
+      <DockModal isOpen={activeModal === '갤러리'} onClose={handleClose}>
+        <LocationModal />
+      </DockModal>
+      <DockModal isOpen={activeModal === '메세지'} onClose={handleClose}>
+        <LocationModal />
+      </DockModal>
       <motion.div
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -88,9 +83,7 @@ export const BottomDock = () => {
               whileTap={{ scale: 0.92 }}
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
               className="flex flex-col items-center justify-center  gap-1 cursor-pointer border-none outline-none"
-              onClick={() =>
-                item.label === '홈' ? handleClose() : handleOpen(item.label)
-              }
+              onClick={() => (item.label === '홈' ? handleClose() : handleOpen(item.label))}
             >
               <div className="flex items-center justify-center rounded-xl bg-white/30 shadow-[0_2px_8px_rgba(0,0,0,0.06)] w-14 h-14">
                 <img
@@ -99,9 +92,7 @@ export const BottomDock = () => {
                   className={`w-10 h-10 object-contain ${item.className || ''} `}
                 />
               </div>
-              <span
-                className={`text-[10px] font-medium leading-none ${item.textColor || ''}`}
-              >
+              <span className={`text-[10px] font-medium leading-none ${item.textColor || ''}`}>
                 {item.label}
               </span>
             </motion.button>
@@ -109,5 +100,5 @@ export const BottomDock = () => {
         </div>
       </motion.div>
     </>
-  )
-}
+  );
+};
