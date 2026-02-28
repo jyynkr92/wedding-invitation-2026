@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { motion } from 'motion/react';
-import { BottomDock } from '../components/bottom-dock';
-import { DDayBox } from '../components/d-day-box';
+import { BottomDock } from '../components/main/bottom-dock';
+import { DDayBox } from '../components/main/d-day-box';
 
 export const Route = createFileRoute('/')({ component: App });
 

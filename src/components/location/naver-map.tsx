@@ -16,5 +16,5 @@ export default function NaverMap() {
     new naver.maps.Marker({ position: center, map });
   }, [loaded]);
 
-  return <div ref={mapRef} style={{ width: '100%', height: '300px' }} />;
+  return <div ref={mapRef} className="w-full h-75 mt-5" />;
 }

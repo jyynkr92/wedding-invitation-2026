@@ -27,7 +27,7 @@ export const DockModal = ({ isOpen, onClose, children }: DockModalProps) => {
             transition={{ type: 'spring', stiffness: 300, damping: 26 }}
             className="fixed inset-x-4 top-12 bottom-34 z-40 rounded-3xl overflow-hidden bg-white/30 backdrop-blur-2xl backdrop-saturate-200 border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.5)]"
           >
-            <div className="flex items-center justify-end px-6 pt-5">
+            <div className="flex items-center justify-end px-6 py-5">
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={onClose}

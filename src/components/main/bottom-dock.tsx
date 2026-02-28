@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { useDeviceType } from '../hooks/use-device-type';
-import { DockModal } from './dock-modal';
-import { IntroContent } from './intro-content';
-import LocationModal from './location-modal';
+import { useDeviceType } from '../../hooks/use-device-type';
+import { DockModal } from '../common/dock-modal';
+import { IntroContent } from '../information/intro-content';
+import LocationContent from '../location/location-content';
+import GalleryContent from '../gallery/gallery-content';
+import MessageContent from '../message/message-content';
 
 type DockItem = {
   label: string;
@@ -61,13 +63,13 @@ export const BottomDock = () => {
         <IntroContent />
       </DockModal>
       <DockModal isOpen={activeModal === '지도'} onClose={handleClose}>
-        <LocationModal />
+        <LocationContent />
       </DockModal>
       <DockModal isOpen={activeModal === '갤러리'} onClose={handleClose}>
-        <LocationModal />
+        <GalleryContent />
       </DockModal>
       <DockModal isOpen={activeModal === '메세지'} onClose={handleClose}>
-        <LocationModal />
+        <MessageContent />
       </DockModal>
       <motion.div
         initial={{ y: 10, opacity: 0 }}
