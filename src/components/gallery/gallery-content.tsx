@@ -53,6 +53,8 @@ export const GalleryContent = () => {
               alt={`gallery-${i + 1}`}
               className="w-full h-full object-cover"
               draggable={false}
+              loading="lazy"
+              decoding="async"
             />
           </button>
         ))}
@@ -60,69 +62,70 @@ export const GalleryContent = () => {
 
       <AnimatePresence>
         {isOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-60 backdrop-blur-xl backdrop-saturate-150 bg-white/10"
-              onClick={close}
-            />
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.96 }}
-              transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-              className="fixed inset-0 z-70 flex items-center justify-center p-6"
+          <motion.div
+            key="gallery-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-60 backdrop-blur-xl backdrop-saturate-150 bg-white/10"
+            onClick={close}
+          />
+        )}
+        {isOpen && (
+          <motion.div
+            key="gallery-content"
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.96 }}
+            transition={{ type: 'spring', stiffness: 320, damping: 28 }}
+            className="fixed inset-0 z-70 flex items-center justify-center p-6"
+          >
+            <div
+              className="relative max-w-[90vw] max-h-[90vh] w-full flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
             >
-              <div
-                className="relative max-w-[90vw] max-h-[90vh] w-full flex items-center justify-center"
-                onClick={(e) => e.stopPropagation()}
+              <img
+                src={images[index ?? 0]}
+                alt={`gallery-large-${(index ?? 0) + 1}`}
+                className="object-contain max-w-full max-h-full rounded-md"
+                draggable={false}
+                onDragStart={(e) => e.preventDefault()}
+                style={{ touchAction: 'none', userSelect: 'none' }}
+                onDoubleClick={(e) => e.preventDefault()}
+                onWheel={(e) => {
+                  if ((e as unknown as WheelEvent).ctrlKey) e.preventDefault();
+                }}
+              />
+
+              <button
+                onClick={close}
+                className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-gray-600"
               >
-                <img
-                  src={images[index ?? 0]}
-                  alt={`gallery-large-${(index ?? 0) + 1}`}
-                  className="object-contain max-w-full max-h-full rounded-md"
-                  draggable={false}
-                  onDragStart={(e) => e.preventDefault()}
-                  style={{ touchAction: 'none', userSelect: 'none' }}
-                  onDoubleClick={(e) => e.preventDefault()}
-                  onWheel={(e) => {
-                    if ((e as unknown as WheelEvent).ctrlKey) e.preventDefault();
-                  }}
-                />
+                <X size={16} />
+              </button>
 
-                <button
-                  onClick={close}
-                  className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-gray-600"
-                >
-                  <X size={16} />
-                </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  showPrev();
+                }}
+                className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/40 backdrop-blur-sm flex items-center justify-center text-gray-700"
+              >
+                <ChevronLeft />
+              </button>
 
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    showPrev();
-                  }}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/40 backdrop-blur-sm flex items-center justify-center text-gray-700"
-                >
-                  <ChevronLeft />
-                </button>
-
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    showNext();
-                  }}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/40 backdrop-blur-sm flex items-center justify-center text-gray-700"
-                >
-                  <ChevronRight />
-                </button>
-              </div>
-            </motion.div>
-          </>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  showNext();
+                }}
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/40 backdrop-blur-sm flex items-center justify-center text-gray-700"
+              >
+                <ChevronRight />
+              </button>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>
