@@ -40,6 +40,14 @@ export const GalleryContent = () => {
 
   return (
     <div>
+      <motion.h2
+        className="carattere-regular text-5xl text-gray-800 mb-6 text-center"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        Gallery
+      </motion.h2>
       <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
         {images.map((src, i) => (
           <button
