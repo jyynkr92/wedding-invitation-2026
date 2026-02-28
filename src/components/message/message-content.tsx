@@ -88,7 +88,7 @@ const MessageContent = () => {
   );
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 h-full">
       <motion.h2
         className="carattere-regular text-5xl text-gray-800 mt-1 text-center"
         initial={{ opacity: 0, y: 10 }}
@@ -97,7 +97,7 @@ const MessageContent = () => {
       >
         Messages
       </motion.h2>
-      <div className="flex flex-col h-full bg-[#f4f4f4]/70 rounded-lg w-full max-w-lg mx-auto overflow-hidden text-sm relative">
+      <div className="flex-1 flex flex-col h-full bg-[#f4f4f4]/70 rounded-lg w-full max-w-full mx-auto overflow-hidden text-sm relative">
         {/* Messages List Area */}
         <div className="flex-1 overflow-y-auto p-4 space-y-6 pt-6">
           <p className="text-center text-xs text-gray-400">방명록에 축하 메시지를 남겨주세요!</p>

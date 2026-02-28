@@ -73,15 +73,15 @@ export const GiftAccountModal = ({ isOpen, onClose, side }: GiftAccountModalProp
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-60 backdrop-blur-sm bg-black/10"
+            className="absolute inset-0 z-60 backdrop-blur-sm bg-black/10"
             onClick={onClose}
           />
           <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 30, scale: 0.96 }}
+            initial={{ opacity: 0, scale: 0.96, x: '-50%', y: '-40%' }}
+            animate={{ opacity: 1, y: '-50%', scale: 1, x: '-50%' }}
+            exit={{ opacity: 0, scale: 0.96, x: '-50%', y: '-40%' }}
             transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-            className="fixed inset-x-6 bottom-32 z-60 rounded-3xl overflow-hidden bg-white/60 backdrop-blur-2xl border border-white/50 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
+            className="absolute top-1/2 left-1/2 w-[calc(100%-3rem)] z-60 rounded-3xl overflow-hidden bg-white/60 backdrop-blur-2xl border border-white/50 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
           >
             <div className="flex items-center justify-between px-5 pt-5 pb-3">
               <h3 className={`text-base font-semibold ${side === 'bride' ? 'bride' : 'groom'}`}>

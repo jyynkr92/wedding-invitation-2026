@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { CircleParking, Train, Bus } from 'lucide-react';
 import Tag from './tag';
 import Tab from './tab';
+import { motion } from 'motion/react';
 
 export type LocationMethodType = 'parking' | 'subway' | 'bus';
 
@@ -24,7 +25,12 @@ const LocationMethod = () => {
   } as const;
 
   return (
-    <div className="w-full max-w-3xl mt-4">
+    <motion.div
+      className="w-full max-w-3xl mt-4"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.4 }}
+    >
       <div className="flex items-center gap-3 justify-center mb-2">
         {Object.entries(tags).map(([key, { title, icon }]) => (
           <Tab
@@ -106,7 +112,7 @@ const LocationMethod = () => {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

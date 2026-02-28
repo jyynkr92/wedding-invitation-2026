@@ -29,8 +29,8 @@ export const IntroContent = () => {
         src="/image/baseball_divider_icon.png"
         alt="divider"
         className="w-7 object-contain my-3"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       />
       <motion.p
@@ -53,8 +53,8 @@ export const IntroContent = () => {
         src="/image/baseball_divider_icon.png"
         alt="divider"
         className="w-7 object-contain my-3"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       />
       <MayCalendar />
@@ -62,8 +62,8 @@ export const IntroContent = () => {
         src="/image/baseball_divider_icon.png"
         alt="divider"
         className="w-7 object-contain my-5"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       />
       <motion.div
@@ -77,8 +77,8 @@ export const IntroContent = () => {
           src="/image/food_image.png"
           alt="food"
           className="w-full object-contain my-5 rounded-md shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         />
         <ul className="list-disc list-inside text-left inline-block">
@@ -95,8 +95,8 @@ export const IntroContent = () => {
         src="/image/baseball_divider_icon.png"
         alt="divider"
         className="w-7 object-contain my-3"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
       />
       <motion.div
