@@ -16,5 +16,5 @@ export default function NaverMap() {
     new naver.maps.Marker({ position: center, map });
   }, [loaded]);
 
-  return <div ref={mapRef} className="w-full h-75 mt-5" />;
+  return <div ref={mapRef} className="w-full h-75 mt-5 rounded-lg" />;
 }

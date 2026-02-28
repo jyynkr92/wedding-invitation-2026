@@ -1,5 +1,6 @@
 import { type ReactNode } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
+import { X } from 'lucide-react';
 
 type DockModalProps = {
   isOpen: boolean;
@@ -31,9 +32,9 @@ export const DockModal = ({ isOpen, onClose, children }: DockModalProps) => {
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={onClose}
-                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/50 backdrop-blur-sm border border-white/30 cursor-pointer text-gray-500 text-sm font-medium"
+                className="w-6 h-6 flex items-center justify-center rounded-full bg-white/50 backdrop-blur-sm border border-white/30 cursor-pointer text-gray-500 text-sm font-medium"
               >
-                ✕
+                <X size={16} />
               </motion.button>
             </div>
             <div className="px-6 pb-6 overflow-y-auto h-[calc(100%-3.5rem)]">{children}</div>
