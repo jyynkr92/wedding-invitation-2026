@@ -13,7 +13,7 @@ function App() {
   ];
 
   return (
-    <div className="relative h-screen max-w-184 mx-auto bg-bottom bg-no-repeat bg-main overflow-hidden">
+    <div className="relative h-screen max-w-140 mx-auto bg-bottom bg-no-repeat bg-main overflow-hidden">
       <div className="absolute top-[calc(25%-7.8rem)] flex flex-col items-center w-full z-0">
         {words.map((word, index) => (
           <motion.div
@@ -32,7 +32,7 @@ function App() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
         style={{ backgroundImage: "url('/image/main_image.png')" }}
-        className="absolute -bottom-1 max-w-184 left-0 w-full h-3/4 bg-cover bg-bottom bg-no-repeat pointer-events-none z-10"
+        className="absolute -bottom-1 max-w-140 left-0 w-full h-3/4 bg-cover bg-bottom bg-no-repeat pointer-events-none z-10"
       />
       <DDayBox />
       <BottomDock />
