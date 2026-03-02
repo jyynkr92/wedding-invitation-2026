@@ -49,11 +49,11 @@ const LocationMethod = () => {
             <ul className="list-disc list-inside space-y-2">
               <li>
                 테이크호텔 또는 테이크호텔 주차장 검색
-                <div className="ml-4">주소 : 경기도 광명시 신기로 22</div>
+                <div className="ml-5 text-[#005493] font-bold">주소 : 경기도 광명시 신기로 22</div>
               </li>
               <li>
                 호텔 엘리베이터 이용이 편리한 주차구역
-                <div className="ml-4 flex flex-wrap gap-2 mt-2">
+                <div className="ml-5 flex flex-wrap gap-2 mt-2">
                   <Tag>지하3층 HO구역</Tag>
                   <Tag>지하4층 LB구역 16, 20-24</Tag>
                   <Tag>지하5층 HO구역 01-04</Tag>

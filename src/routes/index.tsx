@@ -7,18 +7,26 @@ export const Route = createFileRoute('/')({ component: App });
 
 function App() {
   const words = [
-    { text: "We're", ml: '-ml-35' },
-    { text: 'Getting', ml: '' },
-    { text: 'Married', ml: 'ml-35' },
+    { text: "We're", offset: '-60vw' },
+    { text: 'Getting', offset: '-20vw' },
+    { text: 'Married!', offset: '37vw' },
   ];
 
   return (
     <div className="relative h-screen max-w-140 mx-auto bg-bottom bg-no-repeat bg-main overflow-hidden">
-      <div className="absolute top-[calc(25%-7.8rem)] flex flex-col items-center w-full z-0">
+      <div
+        className="absolute flex flex-col items-center w-full z-0"
+        style={{ top: 'clamp(2.5rem, 10.5dvh, 10rem)', paddingInline: '8px' }}
+      >
         {words.map((word, index) => (
           <motion.div
             key={word.text}
-            className={`text-5xl text-yellow-500 ${word.ml} carattere-bold -rotate-12`}
+            className="text-yellow-500 carattere-bold -rotate-13"
+            style={{
+              fontSize: 'clamp(3rem, 15vw, 9rem)',
+              lineHeight: 0.8,
+              marginLeft: word.offset,
+            }}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: index * 0.4, ease: 'easeOut' }}

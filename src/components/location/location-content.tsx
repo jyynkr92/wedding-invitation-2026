@@ -20,7 +20,7 @@ const LocationContent = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         테이크호텔 서울 광명
-        <span>경기 광명시 신기로 22 3층 루미나스홀</span>
+        <span className="font-semibold">경기 광명시 신기로 22 3층 루미나스홀</span>
       </motion.div>
 
       <motion.div

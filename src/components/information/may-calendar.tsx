@@ -19,7 +19,9 @@ const MayCalendar = () => (
     transition={{ duration: 0.5, delay: 0.6 }}
   >
     <div className="w-full rounded-2xl bg-white/40 backdrop-blur-sm border border-white/50 p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
-      <div className="text-4xl font-light text-gray-700 tracking-widest text-center mb-5">5</div>
+      <div className="text-xl font-light text-gray-700 tracking-widest text-center mb-5">
+        2026. 05.
+      </div>
       <div className="grid grid-cols-7 mb-2">
         {DAY_LABELS.map((d) => (
           <div
@@ -38,7 +40,7 @@ const MayCalendar = () => (
               const isSun = di === 0;
               const isSat = di === 6;
               return (
-                <div key={di} className="flex flex-col items-center justify-start py-0.5 gap-0.5">
+                <div key={di} className="flex flex-col items-center justify-start py-0.5 gap-1">
                   {day !== null ? (
                     <>
                       <div
@@ -48,7 +50,7 @@ const MayCalendar = () => (
                         {day}
                       </div>
                       {isHighlight && (
-                        <span className="text-[9px] text-rose-400 font-medium leading-none">
+                        <span className="text-[10px] text-[#005493] font-medium leading-none">
                           오후 1시
                         </span>
                       )}
@@ -62,7 +64,7 @@ const MayCalendar = () => (
       </div>
     </div>
     <motion.p
-      className="text-sm font-bold text-gray-600 tracking-wide mt-7"
+      className="font-bold text-gray-600 tracking-wide mt-7 text-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.8 }}

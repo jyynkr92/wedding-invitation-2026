@@ -113,7 +113,7 @@ const MessageContent = () => {
                 <div key={msg.id || idx} className="flex flex-col items-start w-full">
                   <span className="text-xs text-gray-500 ml-2 mb-1.5">{msg.name}</span>
                   <div className="flex items-end gap-1.5">
-                    <div className="bg-[#e9e9eb] px-3.5 py-2.5 text-black text-[15px] leading-relaxed rounded-[20px] rounded-bl-[4px] max-w-[250px] sm:max-w-[280px] shadow-sm wrap-break-word whitespace-pre-wrap">
+                    <div className="bg-neutral-200 px-3 py-2 text-black text-sm leading-relaxed rounded-[20px] rounded-bl-[4px] max-w-[250px] sm:max-w-[280px] shadow-sm wrap-break-word whitespace-pre-wrap">
                       {msg.content}
                     </div>
                     <span className="text-[10px] text-gray-400 mb-1.5 shrink-0">

@@ -26,8 +26,7 @@ export const BottomDock = () => {
     setActiveModal(null);
   };
 
-  const calendarIcon =
-    deviceType === 'android' ? '/image/calendar-android.png' : '/image/calendar-ios.png';
+  const calendarIcon = '/image/calendar-android.png';
 
   const dockItems: DockItem[] = [
     {
@@ -50,7 +49,7 @@ export const BottomDock = () => {
       textColor: 'text-white',
     },
     {
-      label: '메세지',
+      label: '메시지',
       icon: '/image/chat.png',
       className: 'text-white',
       textColor: 'text-white',
@@ -68,7 +67,7 @@ export const BottomDock = () => {
       <DockModal isOpen={activeModal === '갤러리'} onClose={handleClose}>
         <GalleryContent />
       </DockModal>
-      <DockModal isOpen={activeModal === '메세지'} onClose={handleClose}>
+      <DockModal isOpen={activeModal === '메시지'} onClose={handleClose}>
         <MessageContent />
       </DockModal>
       <motion.div
@@ -77,21 +76,21 @@ export const BottomDock = () => {
         transition={{ duration: 1.2, ease: 'easeOut' }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 max-w-140"
       >
-        <div className="flex items-center justify-between gap-3 px-5 py-3 w-screen max-w-140">
+        <div className="flex items-center justify-between gap-2 px-5 py-3 w-screen max-w-140">
           {dockItems.map((item) => (
             <motion.button
               key={item.label}
               whileHover={{ scale: 1.15, y: -4 }}
               whileTap={{ scale: 0.92 }}
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-              className="flex flex-col items-center justify-center  gap-1 cursor-pointer border-none outline-none"
+              className="flex pretendard flex-col items-center justify-center  gap-1 cursor-pointer border-none outline-none"
               onClick={() => (item.label === '홈' ? handleClose() : handleOpen(item.label))}
             >
               <div className="flex items-center justify-center rounded-xl bg-white/30 shadow-[0_2px_8px_rgba(0,0,0,0.06)] w-14 h-14">
                 <img
                   src={item.icon}
                   alt={item.label}
-                  className={`w-10 h-10 object-contain ${item.className || ''} `}
+                  className={`object-contain ${item.className || ''} ${item.label === '소개' ? 'w-14 h-14' : 'w-10 h-10'} `}
                 />
               </div>
               <span className={`text-[10px] font-medium leading-none ${item.textColor || ''}`}>

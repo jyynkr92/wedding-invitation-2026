@@ -72,7 +72,7 @@ export const IntroContent = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        <div className="text-lg mb-4">예식 · 식사 안내</div>
+        <div className="text-xl mb-4">예식 · 식사 안내</div>
         <motion.img
           src="/image/food_image.png"
           alt="food"
@@ -105,7 +105,7 @@ export const IntroContent = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        <div className="text-lg mb-4">마음 전하실 곳</div>
+        <div className="text-xl mb-4">마음 전하실 곳</div>
         <p>
           참석이 어려우시더라도 축복해주시는 마음은
           <br /> 잊지 않고 감사히 간직하겠습니다.

@@ -39,7 +39,15 @@ export const GalleryContent = () => {
   }, [isOpen, close, showPrev, showNext]);
 
   return (
-    <div>
+    <div
+      draggable={false}
+      onDragStart={(e) => e.preventDefault()}
+      style={{ touchAction: 'none', userSelect: 'none' }}
+      onDoubleClick={(e) => e.preventDefault()}
+      onWheel={(e) => {
+        if ((e as unknown as WheelEvent).ctrlKey) e.preventDefault();
+      }}
+    >
       <motion.h2
         className="carattere-regular text-5xl text-gray-800 mb-6 text-center"
         initial={{ opacity: 0, y: 10 }}

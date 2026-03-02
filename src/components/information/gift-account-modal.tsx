@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'motion/react';
 import AccountItem from './account-item';
+import { X } from 'lucide-react';
 
 export type AccountRow = {
   name: string;
@@ -32,7 +33,7 @@ const ACCOUNTS: Record<'bride' | 'groom', AccountRow[]> = {
     {
       name: '송형근',
       account: '070-118746-01-019',
-      bank: '기압',
+      bank: '기업',
       isMain: true,
       side: 'groom',
     },
@@ -84,15 +85,13 @@ export const GiftAccountModal = ({ isOpen, onClose, side }: GiftAccountModalProp
             className="absolute top-1/2 left-1/2 w-[calc(100%-3rem)] z-60 rounded-3xl overflow-hidden bg-white/60 backdrop-blur-2xl border border-white/50 shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
           >
             <div className="flex items-center justify-between px-5 pt-5 pb-3">
-              <h3 className={`text-base font-semibold ${side === 'bride' ? 'bride' : 'groom'}`}>
-                {title}
-              </h3>
+              <h3 className={`text-base ${side === 'bride' ? 'bride' : 'groom'}`}>{title}</h3>
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={onClose}
                 className="w-7 h-7 flex items-center justify-center rounded-full bg-white/50 border border-white/40 cursor-pointer text-gray-400 text-xs"
               >
-                ✕
+                <X size={16} />
               </motion.button>
             </div>
             <div className="px-5 pb-6 flex flex-col gap-3">
