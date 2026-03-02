@@ -33,7 +33,7 @@ export const BottomDock = () => {
     {
       label: '소개',
       icon: calendarIcon,
-      className: 'shadow-[3px_3px_6px_rgba(0,0,0,0.15)] rounded-md',
+      className: deviceType === 'android' ? '' : 'shadow-[3px_3px_6px_rgba(0,0,0,0.15)] rounded-md',
       textColor: 'text-gray-800',
     },
     { label: '지도', icon: '/image/location.png', textColor: 'text-gray-800' },
@@ -91,7 +91,7 @@ export const BottomDock = () => {
                 <img
                   src={item.icon}
                   alt={item.label}
-                  className={`object-contain ${item.className || ''} ${item.label === '소개' && deviceType === 'android' ? 'w-14 h-14' : 'w-10 h-10'} `}
+                  className={`object-contain ${item.className || ''} w-10 h-10`}
                 />
               </div>
               <span className={`text-[10px] font-medium leading-none ${item.textColor || ''}`}>

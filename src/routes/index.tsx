@@ -16,7 +16,7 @@ function App() {
     <div className="relative h-screen max-w-140 mx-auto bg-bottom bg-no-repeat bg-main overflow-hidden">
       <div
         className="absolute flex flex-col items-center w-full z-0"
-        style={{ top: 'clamp(2.5rem, 10.5dvh, 8rem)', paddingInline: '8px' }}
+        style={{ top: 'clamp(2.5rem, 9.8dvh, 8rem)', paddingInline: '8px' }}
       >
         {words.map((word, index) => (
           <motion.div
