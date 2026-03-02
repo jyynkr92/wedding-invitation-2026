@@ -56,12 +56,12 @@ export const GalleryContent = () => {
       >
         Gallery
       </motion.h2>
-      <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+      <div className="grid grid-cols-3 gap-3">
         {images.map((src, i) => (
           <button
             key={src}
             onClick={() => openAt(i)}
-            className="rounded-md overflow-hidden bg-gray-100 w-full h-24 sm:h-28"
+            className="rounded-md overflow-hidden bg-gray-100 w-full h-40 sm:h-50"
             aria-label={`Open gallery image ${i + 1}`}
           >
             <img
