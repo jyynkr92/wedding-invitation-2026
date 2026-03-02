@@ -26,7 +26,8 @@ export const BottomDock = () => {
     setActiveModal(null);
   };
 
-  const calendarIcon = '/image/calendar-android.png';
+  const calendarIcon =
+    deviceType === 'android' ? '/image/calendar-android.png' : '/image/calendar-ios.png';
 
   const dockItems: DockItem[] = [
     {
@@ -90,7 +91,7 @@ export const BottomDock = () => {
                 <img
                   src={item.icon}
                   alt={item.label}
-                  className={`object-contain ${item.className || ''} ${item.label === '소개' ? 'w-14 h-14' : 'w-10 h-10'} `}
+                  className={`object-contain ${item.className || ''} ${item.label === '소개' && deviceType === 'android' ? 'w-14 h-14' : 'w-10 h-10'} `}
                 />
               </div>
               <span className={`text-[10px] font-medium leading-none ${item.textColor || ''}`}>
