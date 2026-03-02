@@ -1,54 +1,63 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'motion/react';
 import { GiftAccountModal } from './gift-account-modal';
 import MayCalendar from './may-calendar';
 import HeartFillIcon from '@/icons/heart-fill-icon';
+import PetalCanvas from './petal-canvas';
 
 export const IntroContent = () => {
   const [giftModal, setGiftModal] = useState<'bride' | 'groom' | null>(null);
 
+  const introRef = useRef<HTMLDivElement>(null);
+
   return (
     <div className="flex flex-col items-center gap-4 py-4">
-      <motion.img
-        src="/image/ground_icon.png"
-        alt="ground"
-        className="size-17 object-contain"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-      />
-      <motion.h2
-        className="carattere-regular text-5xl text-gray-800"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        Our wedding day
-      </motion.h2>
-      <motion.img
-        src="/image/baseball_divider_icon.png"
-        alt="divider"
-        className="w-7 object-contain my-3"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      />
-      <motion.p
-        className="text-center text-sm leading-7 text-gray-700 whitespace-pre-line"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
-        {`두 사람이 만나\n최고의 배터리를 이루어\n평생 함께할 경기를 시작하고자 합니다.\n직관 오셔서 저희의 새로운 출발을\n축복해 주시면 감사하겠습니다.`}
-      </motion.p>
-      <motion.p
-        className="text-center text-sm leading-7 text-gray-700 whitespace-pre-line border-t border-b border-neutral-700 py-5 my-5"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
-        {`송준일 · 권정숙의 아들 형근\n 김영기 · 유영춘의 딸 진선`}
-      </motion.p>
+      {/* 꽃잎 애니메이션 영역 */}
+      <div ref={introRef} className="relative flex flex-col items-center gap-4 w-full pb-2">
+        <PetalCanvas containerRef={introRef} />
+        <div className="relative z-10 flex flex-col items-center gap-4 w-full">
+          <motion.img
+            src="/image/ground_icon.png"
+            alt="ground"
+            className="size-17 object-contain"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          />
+          <motion.h2
+            className="carattere-regular text-5xl text-gray-800"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Our wedding day
+          </motion.h2>
+          <motion.img
+            src="/image/baseball_divider_icon.png"
+            alt="divider"
+            className="w-7 object-contain my-3"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          />
+          <motion.p
+            className="text-center text-sm leading-7 text-gray-700 whitespace-pre-line"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            {`두 사람이 만나\n최고의 배터리를 이루어\n평생 함께할 경기를 시작하고자 합니다.\n직관 오셔서 저희의 새로운 출발을\n축복해 주시면 감사하겠습니다.`}
+          </motion.p>
+          <motion.p
+            className="text-center text-sm leading-7 text-gray-700 whitespace-pre-line border-t border-b border-neutral-700 py-5 my-5 w-full"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            {`송준일 · 권정숙의 아들 형근\n 김영기 · 유영춘의 딸 진선`}
+          </motion.p>
+        </div>
+      </div>
       <motion.img
         src="/image/baseball_divider_icon.png"
         alt="divider"
