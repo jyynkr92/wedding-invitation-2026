@@ -19,8 +19,8 @@ const LocationContent = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        테이크호텔 서울 광명
-        <span className="font-semibold">경기 광명시 신기로 22 3층 루미나스홀</span>
+        L7 광명 바이 롯데호텔
+        <span className="font-bold">경기 광명시 신기로 22 3층</span>
       </motion.div>
 
       <motion.div
