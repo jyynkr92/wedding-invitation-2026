@@ -13,17 +13,17 @@ function App() {
   ];
 
   return (
-    <div className="relative h-screen max-w-140 mx-auto bg-bottom bg-no-repeat bg-main overflow-hidden">
+    <div className="relative h-dvh max-w-140 mx-auto bg-bottom bg-no-repeat bg-main overflow-hidden">
       <div
         className="absolute flex flex-col items-center w-full z-0"
-        style={{ top: 'clamp(2.5rem, 9.8dvh, 8rem)', paddingInline: '8px' }}
+        style={{ top: 'clamp(2.5rem, 8.5dvh, 8rem)', paddingInline: '8px' }}
       >
         {words.map((word, index) => (
           <motion.div
             key={word.text}
             className="text-yellow-500 carattere-bold -rotate-13"
             style={{
-              fontSize: 'clamp(3rem, 15vw, 4rem)',
+              fontSize: 'clamp(3rem, 14vw, 4rem)',
               lineHeight: 0.8,
               marginLeft: word.offset,
             }}
