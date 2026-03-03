@@ -75,7 +75,7 @@ export const BottomDock = () => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.2, ease: 'easeOut' }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50 max-w-140"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-50 max-w-140"
       >
         <div className="flex items-center justify-between gap-2 px-5 py-3 w-screen max-w-140">
           {dockItems.map((item) => (
