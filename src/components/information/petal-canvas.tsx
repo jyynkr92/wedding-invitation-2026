@@ -22,12 +22,19 @@ const PETAL_COLORS = [
   'rgba(240, 150, 175, 0.85)',
   'rgba(255, 100, 140, 0.82)',
   'rgba(250, 170, 190, 0.88)',
+  'rgba(255, 160, 180, 0.92)',
+  'rgba(255, 130, 160, 0.88)',
+  'rgba(255, 182, 200, 0.90)',
+  'rgba(240, 150, 175, 0.85)',
+  'rgba(255, 100, 140, 0.82)',
 ];
 
 const PetalCanvas = ({
   containerRef,
+  counts = 28,
 }: {
   containerRef: React.RefObject<HTMLDivElement | null>;
+  counts?: number;
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const petalsRef = useRef<Petal[]>([]);
@@ -47,7 +54,7 @@ const PetalCanvas = ({
     };
     updateSize();
 
-    const PETAL_COUNT = 28;
+    const PETAL_COUNT = counts;
 
     const createPetal = (initialY?: number): Petal => ({
       x: Math.random() * canvas.width,

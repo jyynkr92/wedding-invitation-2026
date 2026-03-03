@@ -6,7 +6,6 @@ const MAY_DAYS = [
   [10, 11, 12, 13, 14, 15, 16],
   [17, 18, 19, 20, 21, 22, 23],
   [24, 25, 26, 27, 28, 29, 30],
-  [31, null, null, null, null, null, null],
 ];
 
 const DAY_LABELS = ['일', '월', '화', '수', '목', '금', '토'];
@@ -19,8 +18,8 @@ const MayCalendar = () => (
     transition={{ duration: 0.5, delay: 0.6 }}
   >
     <div className="w-full rounded-2xl bg-white/40 backdrop-blur-sm border border-white/50 p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
-      <div className="text-xl font-light text-gray-700 tracking-widest text-center mb-5">
-        2026. 05.
+      <div className="text-xl font-bold text-gray-700 tracking-widest text-center mb-5">
+        2026.05
       </div>
       <div className="grid grid-cols-7 mb-2">
         {DAY_LABELS.map((d) => (

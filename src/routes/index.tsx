@@ -2,10 +2,13 @@ import { createFileRoute } from '@tanstack/react-router';
 import { motion } from 'motion/react';
 import { BottomDock } from '../components/main/bottom-dock';
 import { DDayBox } from '../components/main/d-day-box';
+import PetalCanvas from '@/components/information/petal-canvas';
+import { useRef } from 'react';
 
 export const Route = createFileRoute('/')({ component: App });
 
 function App() {
+  const containerRef = useRef<HTMLDivElement>(null);
   const words = [
     { text: "We're", offset: '-55%' },
     { text: 'Getting', offset: '-14%' },
@@ -13,15 +16,19 @@ function App() {
   ];
 
   return (
-    <div className="relative h-dvh max-w-140 mx-auto bg-bottom bg-no-repeat bg-main overflow-hidden">
+    <div
+      ref={containerRef}
+      className="relative h-dvh max-w-140 mx-auto bg-bottom bg-no-repeat bg-main overflow-hidden"
+    >
+      <PetalCanvas containerRef={containerRef} counts={40} />
       <div
-        className="absolute flex flex-col items-center w-full z-0"
+        className="absolute flex flex-col items-center w-full z-10"
         style={{ top: 'clamp(2.5rem, 8.5dvh, 8rem)', paddingInline: '8px' }}
       >
         {words.map((word, index) => (
           <motion.div
             key={word.text}
-            className="text-yellow-500 carattere-bold -rotate-13"
+            className="text-yellow-500 carattere-regular -rotate-13"
             style={{
               fontSize: 'clamp(3rem, 14vw, 4rem)',
               lineHeight: 0.8,

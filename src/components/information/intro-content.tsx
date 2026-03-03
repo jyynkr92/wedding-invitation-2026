@@ -125,7 +125,7 @@ export const IntroContent = () => {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => setGiftModal('groom')}
-            className="px-5 py-2.5 rounded-2xl text-sm font-semibold text-white cursor-pointer border-none outline-none shadow-[0_2px_10px_rgba(34,140,205,0.25)] groom-bg flex items-center gap-1.5"
+            className="px-5 py-2.5 rounded-2xl text-sm text-white cursor-pointer border-none outline-none shadow-[0_2px_10px_rgba(34,140,205,0.25)] groom-bg flex items-center gap-1.5"
           >
             신랑측 <HeartFillIcon className="text-sky-200" />
           </motion.button>
@@ -133,7 +133,7 @@ export const IntroContent = () => {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => setGiftModal('bride')}
-            className="px-5 py-2.5 rounded-2xl text-sm font-semibold text-white cursor-pointer border-none outline-none shadow-[0_2px_10px_rgba(142,34,23,0.2)] bride-bg flex items-center gap-1.5"
+            className="px-5 py-2.5 rounded-2xl text-sm text-white cursor-pointer border-none outline-none shadow-[0_2px_10px_rgba(142,34,23,0.2)] bride-bg flex items-center gap-1.5"
           >
             신부측 <HeartFillIcon className="text-rose-200" />
           </motion.button>
