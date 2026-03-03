@@ -31,7 +31,7 @@ const LocationMethod = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
     >
-      <div className="flex items-center gap-3 justify-center mb-2">
+      <div className="flex items-center gap-3 justify-between mb-2">
         {Object.entries(tags).map(([key, { title, icon }]) => (
           <Tab
             key={key}
@@ -48,7 +48,7 @@ const LocationMethod = () => {
           <div className="space-y-3">
             <ul className="list-disc list-inside space-y-2">
               <li>
-                테이크호텔 또는 테이크호텔 주차장 검색
+                L7 광명 바이 롯데호텔 주차장 검색
                 <div className="ml-5 text-[#005493] font-bold">주소 : 경기도 광명시 신기로 22</div>
               </li>
               <li>
