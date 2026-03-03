@@ -3,12 +3,31 @@ import { motion } from 'motion/react';
 import { BottomDock } from '../components/main/bottom-dock';
 import { DDayBox } from '../components/main/d-day-box';
 import PetalCanvas from '@/components/information/petal-canvas';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export const Route = createFileRoute('/')({ component: App });
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isMainImageLoaded, setIsMainImageLoaded] = useState<boolean>(false);
+
+  useEffect(() => {
+    const image = new Image();
+    image.src = '/image/main_image_v2.png';
+
+    if (image.complete) {
+      setIsMainImageLoaded(true);
+      return;
+    }
+
+    const handleLoad = () => setIsMainImageLoaded(true);
+    image.addEventListener('load', handleLoad);
+
+    return () => {
+      image.removeEventListener('load', handleLoad);
+    };
+  }, []);
+
   const words = [
     { text: "We're", offset: '-55%' },
     { text: 'Getting', offset: '-14%' },
@@ -44,7 +63,7 @@ function App() {
       </div>
       <motion.div
         initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={isMainImageLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
         style={{ backgroundImage: "url('/image/main_image_v2.png')" }}
         className="absolute -bottom-1 max-w-140 left-0 w-full h-3/4 bg-cover bg-bottom bg-no-repeat pointer-events-none z-10"
