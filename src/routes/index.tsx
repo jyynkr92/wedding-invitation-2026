@@ -28,7 +28,7 @@ function App() {
         {words.map((word, index) => (
           <motion.div
             key={word.text}
-            className="text-yellow-500 carattere-regular -rotate-13"
+            className="text-gray-500 carattere-regular -rotate-13"
             style={{
               fontSize: 'clamp(3rem, 14vw, 4rem)',
               lineHeight: 0.8,
