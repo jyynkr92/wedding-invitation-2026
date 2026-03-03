@@ -15,14 +15,10 @@ export const DDayBox = () => {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.5, ease: 'easeOut' }}
-      className="fixed w-[280px] left-1/2 -translate-x-1/2 bottom-50 z-10 px-7 py-4 rounded-2xl bg-white/40 shadow-[0_2px_8px_rgba(0,0,0,0.06)] flex flex-col items-center gap-2"
+      className="absolute w-[260px] left-1/2 -translate-x-1/2 bottom-37 z-10 px-7 py-4 rounded-2xl bg-white/40 shadow-[0_2px_8px_rgba(0,0,0,0.06)] flex flex-col items-center gap-2"
     >
-      <span className="text-2xl font-extrabold text-[#005493] pretendard tracking-widest">
-        D-{dday}
-      </span>
-      <span className="text-lg font-semibold text-gray-700 pretendard tracking-wide">
-        2026년 05월 30일 토요일
-      </span>
+      <span className="text-xl text-[#005493] esamanru">D-{dday}</span>
+      <span className="text-gray-700 esamanru">2026년 05월 30일 토요일</span>
     </motion.div>
   );
 };
