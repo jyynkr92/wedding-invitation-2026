@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const image = new Image();
-    image.src = '/image/main_image_v2.png';
+    image.src = '/image/main_image_v3.png';
 
     if (image.complete) {
       setIsMainImageLoaded(true);
@@ -65,7 +65,7 @@ function App() {
         initial={{ opacity: 0, y: 10 }}
         animate={isMainImageLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
-        style={{ backgroundImage: "url('/image/main_image_v2.png')" }}
+        style={{ backgroundImage: "url('/image/main_image_v3.png')" }}
         className="absolute -bottom-1 max-w-140 left-0 w-full h-3/4 bg-cover bg-bottom bg-no-repeat pointer-events-none z-10"
       />
       <DDayBox />
