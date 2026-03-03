@@ -50,9 +50,7 @@ const MayCalendar = () => (
                         {day}
                       </div>
                       {isHighlight && (
-                        <span className="text-[10px] text-[#005493] font-medium leading-none">
-                          오후 1시
-                        </span>
+                        <span className="text-[9px] text-[#005493] leading-3">오후 1시</span>
                       )}
                     </>
                   ) : null}
@@ -64,14 +62,14 @@ const MayCalendar = () => (
       </div>
     </div>
     <motion.p
-      className="font-bold text-gray-600 tracking-wide mt-7 text-center"
+      className="text-gray-600 tracking-wide mt-7 text-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.8 }}
     >
-      2026년 5월 30일 <span className="text-blue-700">토요일 오후 1시</span>
+      2026년 5월 30일 <span className="text-[#005493]">토요일 오후 1시</span>
       <br />
-      테이크호텔 서울 광명 3층 루미나스홀
+      L7 광명 바이 롯데호텔 3층
     </motion.p>
   </motion.div>
 );
