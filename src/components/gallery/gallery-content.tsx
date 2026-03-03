@@ -53,7 +53,7 @@ export const GalleryContent = () => {
           <button
             key={src}
             onClick={() => openAt(i)}
-            className="rounded-md overflow-hidden bg-gray-100 w-full h-40 sm:h-50"
+            className="rounded-md overflow-hidden bg-gray-100 w-full h-40 sm:h-50 no-save-image"
             aria-label={`Open gallery image ${i + 1}`}
           >
             <img
@@ -63,6 +63,7 @@ export const GalleryContent = () => {
               draggable={false}
               loading="lazy"
               decoding="async"
+              onContextMenu={(e) => e.preventDefault()}
             />
           </button>
         ))}
@@ -96,7 +97,7 @@ export const GalleryContent = () => {
               <img
                 src={images[index ?? 0]}
                 alt={`gallery-large-${(index ?? 0) + 1}`}
-                className="object-contain max-w-full max-h-full rounded-md"
+                className="object-contain max-w-full max-h-full rounded-md no-save-image"
                 draggable={false}
                 onDragStart={(e) => e.preventDefault()}
                 style={{ touchAction: 'none', userSelect: 'none' }}
@@ -104,6 +105,7 @@ export const GalleryContent = () => {
                 onWheel={(e) => {
                   if ((e as unknown as WheelEvent).ctrlKey) e.preventDefault();
                 }}
+                onContextMenu={(e) => e.preventDefault()}
               />
 
               <button

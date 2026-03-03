@@ -92,3 +92,9 @@ body {
 .groom-bg {
   background-color: #228ccd;
 }
+
+.no-save-image {
+  -webkit-touch-callout: none; /* iOS 길게 눌렀을 때 메뉴 방지 */
+  -webkit-user-select: none;
+  user-select: none;
+}
