@@ -19,13 +19,13 @@ type GiftAccountModalProps = {
 const ACCOUNTS: Record<'bride' | 'groom', AccountRow[]> = {
   groom: [
     {
-      name: '송준일',
+      name: '신랑 아버지',
       account: '609301-04-106740',
       bank: '국민',
       side: 'groom',
     },
     {
-      name: '권정숙',
+      name: '신랑 어머니',
       account: '745011-52-079830',
       bank: '농협',
       side: 'groom',
@@ -40,13 +40,13 @@ const ACCOUNTS: Record<'bride' | 'groom', AccountRow[]> = {
   ],
   bride: [
     {
-      name: '김영기',
+      name: '신부 아버지',
       account: '110-124-307572',
       bank: '신한',
       side: 'bride',
     },
     {
-      name: '유영춘',
+      name: '신부 어머니',
       account: '640-001532-02-013',
       bank: '농협',
       side: 'bride',
