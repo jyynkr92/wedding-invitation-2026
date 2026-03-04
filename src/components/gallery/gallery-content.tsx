@@ -53,19 +53,11 @@ export const GalleryContent = () => {
           <button
             key={src}
             onClick={() => openAt(i)}
-            className="rounded-md overflow-hidden bg-gray-100 w-full h-40 sm:h-50 no-save-image"
+            className="rounded-md overflow-hidden bg-gray-100 w-full h-40 sm:h-50 no-save-image bg-cover bg-center"
+            style={{ backgroundImage: `url(${src})` }}
             aria-label={`Open gallery image ${i + 1}`}
-          >
-            <img
-              src={src}
-              alt={`gallery-${i + 1}`}
-              className="w-full h-full object-cover"
-              draggable={false}
-              loading="lazy"
-              decoding="async"
-              onContextMenu={(e) => e.preventDefault()}
-            />
-          </button>
+            onContextMenu={(e) => e.preventDefault()}
+          />
         ))}
       </div>
 
@@ -91,22 +83,27 @@ export const GalleryContent = () => {
             className="fixed inset-0 z-70 flex items-center justify-center p-6"
           >
             <div
-              className="relative max-w-[90vw] max-h-[90vh] w-full flex items-center justify-center"
+              className="relative max-w-[90vw] max-h-[90vh] size-full flex-1 flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={images[index ?? 0]}
-                alt={`gallery-large-${(index ?? 0) + 1}`}
-                className="object-contain max-w-full max-h-full rounded-md no-save-image"
-                draggable={false}
+              <div
+                className="relative bg-center size-full bg-no-repeat bg-cover rounded-md overflow-hidden no-save-image shadow-lg"
                 onDragStart={(e) => e.preventDefault()}
-                style={{ touchAction: 'none', userSelect: 'none' }}
-                onDoubleClick={(e) => e.preventDefault()}
-                onWheel={(e) => {
-                  if ((e as unknown as WheelEvent).ctrlKey) e.preventDefault();
+                style={{
+                  backgroundImage: `url(${images[index ?? 0]})`,
+                  touchAction: 'none',
+                  userSelect: 'none',
                 }}
+                onDoubleClick={(e) => e.preventDefault()}
                 onContextMenu={(e) => e.preventDefault()}
-              />
+              >
+                <img
+                  src={images[index ?? 0]}
+                  alt={`gallery-large-${(index ?? 0) + 1}`}
+                  className="max-w-[90vw] max-h-[90vh] opacity-0 pointer-events-none select-none block"
+                  draggable={false}
+                />
+              </div>
 
               <button
                 onClick={close}
