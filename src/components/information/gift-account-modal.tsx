@@ -49,7 +49,7 @@ const ACCOUNTS: Record<'bride' | 'groom', AccountRow[]> = {
     {
       name: '신부 어머니',
       account: '640-001532-02-013',
-      bank: '농협',
+      bank: '기업',
       side: 'bride',
     },
     {
