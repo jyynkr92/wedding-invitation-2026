@@ -16,6 +16,7 @@ type GiftAccountModalProps = {
   side: 'bride' | 'groom';
 };
 
+/** TODO: 추후 private 레포로 변경할것 */
 const ACCOUNTS: Record<'bride' | 'groom', AccountRow[]> = {
   groom: [
     {
