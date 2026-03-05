@@ -61,14 +61,14 @@ const MayCalendar = () => (
       </div>
     </div>
     <motion.p
-      className="text-gray-600 tracking-wide mt-7 text-center"
+      className="text-gray-600 tracking-wide mt-7 text-center text-sm"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.8 }}
     >
       2026년 5월 30일 <span className="text-[#005493]">토요일 오후 1시</span>
       <br />
-      L7 광명 바이 롯데호텔 3층
+      <span>L7 광명 바이 롯데호텔 3층 스튜디오홀</span>
     </motion.p>
   </motion.div>
 );

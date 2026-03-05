@@ -20,7 +20,7 @@ const LocationContent = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         L7 광명 바이 롯데호텔
-        <span className="font-bold">경기 광명시 신기로 22 3층</span>
+        <span className="font-bold text-[16px]">경기 광명시 신기로 22 3층 스튜디오홀</span>
       </motion.div>
 
       <motion.div
