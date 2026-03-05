@@ -21,6 +21,7 @@ const LocationContent = () => {
       >
         L7 광명 바이 롯데호텔
         <span className="font-bold text-[16px]">경기 광명시 신기로 22 3층 스튜디오홀</span>
+        <div className="text-[16px] text-gray-600">(구. 테이크호텔)</div>
       </motion.div>
 
       <motion.div

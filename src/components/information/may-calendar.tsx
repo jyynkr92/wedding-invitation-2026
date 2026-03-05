@@ -60,7 +60,7 @@ const MayCalendar = () => (
         ))}
       </div>
     </div>
-    <motion.p
+    <motion.div
       className="text-gray-600 tracking-wide mt-7 text-center text-sm"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -69,7 +69,8 @@ const MayCalendar = () => (
       2026년 5월 30일 <span className="text-[#005493]">토요일 오후 1시</span>
       <br />
       <span>L7 광명 바이 롯데호텔 3층 스튜디오홀</span>
-    </motion.p>
+      <div className="text-gray-600">(구. 테이크호텔)</div>
+    </motion.div>
   </motion.div>
 );
 
