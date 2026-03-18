@@ -48,14 +48,24 @@ export const IntroContent = () => {
           >
             {`두 사람이 만나\n최고의 배터리를 이루어\n평생 함께할 경기를 시작하고자 합니다.\n직관 오셔서 저희의 새로운 출발을\n축복해 주시면 감사하겠습니다.`}
           </motion.p>
-          <motion.p
-            className="text-center text-sm leading-7 text-gray-700 whitespace-pre-line border-t border-b border-neutral-700 py-5 my-5 w-full"
+          <motion.div
+            className="flex justify-center border-t border-b border-neutral-700 py-6 my-5 w-full"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            {`송준일 · 권정숙의 아들 형근\n 김영기 · 유영춘의 딸 진선`}
-          </motion.p>
+            <div className="grid grid-cols-[auto_auto_auto] gap-x-1 gap-y-2 items-center text-[15px] text-gray-800">
+              <div className="text-right">송준일 · 권정숙</div>
+              <div className="text-center text-sm text-gray-500 w-[50px]">의 아들</div>
+              <div className="text-left font-medium text-base">형근</div>
+
+              <div className="text-right">김영기 · 유영춘</div>
+              <div className="text-center text-sm text-gray-500 w-[50px]">
+                의 <span className="mr-[10px]">딸</span>
+              </div>
+              <div className="text-left font-medium text-base">진선</div>
+            </div>
+          </motion.div>
         </div>
       </div>
       <motion.img
