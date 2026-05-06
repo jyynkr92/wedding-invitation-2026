@@ -104,7 +104,7 @@ export const IntroContent = () => {
           <li>
             예식 시작 30분 전부터 식사 가능합니다.
             <br />
-            <span className="ml-5">(오후 2시 30분까지 식사 가능)</span>
+            <span className="ml-5">(오후 3시 30분까지 식사 가능)</span>
           </li>
           <li>식사는 뷔페로 준비되어 있습니다.</li>
           <li>음료 및 주류 제공됩니다.</li>
