@@ -1,9 +1,9 @@
-import { useNaverMapScript } from '@/hooks/use-naver-map-script';
 import { useEffect, useRef } from 'react';
 
 export default function NaverMap() {
   const mapRef = useRef<HTMLDivElement>(null);
-  const loaded = useNaverMapScript();
+  // const loaded = useNaverMapScript();
+  const loaded = false;
 
   useEffect(() => {
     if (!loaded || !mapRef.current) return;
